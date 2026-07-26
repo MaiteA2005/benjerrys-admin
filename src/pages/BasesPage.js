@@ -5,10 +5,10 @@ import {
     deleteBase
 } from "../api/api.js";
 
-import { createModal } from "../components/modal.js";
+import { createModal } from "../components/Modal.js";
 import {
     createFeedbackMessage
-} from "../components/feedbackMessage.js";
+} from "../components/FeedbackMessage.js";
 
 import {
     escapeHtml,

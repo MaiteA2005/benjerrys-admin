@@ -4,27 +4,27 @@ import logoImage from "./assets/b&j-logo.svg";
 
 import {
   renderSidebar
-} from "./components/sidebar.js";
+} from "./components/Sidebar.js";
 
 import {
   renderDashboardPage
-} from "./pages/dashboardPage.js";
+} from "./pages/DashboardPage.js";
 
 import {
   renderOrdersPage
-} from "./pages/ordersPage.js";
+} from "./pages/OrdersPage.js";
 
 import {
   renderBasesPage
-} from "./pages/basesPage.js";
+} from "./pages/BasesPage.js";
 
 import {
   renderFlavorsPage
-} from "./pages/flavorsPage.js";
+} from "./pages/FlavorsPage.js";
 
 import {
   renderToppingsPage
-} from "./pages/toppingsPage.js";
+} from "./pages/ToppingsPage.js";
 
 const app =
   document.querySelector("#app");
