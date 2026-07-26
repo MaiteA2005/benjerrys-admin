@@ -60,3 +60,117 @@ export const deleteOrder = (
         method: "DELETE"
     });
 };
+
+export const getBases = () => {
+    return fetchJson("/bases");
+};
+
+export const createBase = (baseData) => {
+    return fetchJson("/bases", {
+        method: "POST",
+
+        headers: {
+        "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify(baseData)
+    });
+};
+
+export const updateBase = (
+    baseId,
+    baseData
+    ) => {
+    return fetchJson(
+        `/bases/${baseId}`,
+        {
+        method: "PUT",
+
+        headers: {
+            "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify(baseData)
+        }
+    );
+};
+
+export const deleteBase = (baseId) => {
+    return fetchJson(`/bases/${baseId}`, {
+        method: "DELETE"
+    });
+};
+
+export const getFlavors = () => {
+    return fetchJson("/flavors");
+};
+
+export const createFlavor = (flavorData) => {
+    return fetchJson("/flavors", {
+        method: "POST",
+        headers: {
+        "Content-Type": "application/json"
+        },
+        body: JSON.stringify(flavorData)
+    });
+};
+
+export const updateFlavor = (
+    flavorId,
+    flavorData
+    ) => {
+    return fetchJson(
+        `/flavors/${flavorId}`,
+        {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(flavorData)
+        }
+    );
+};
+
+export const deleteFlavor = (
+    flavorId
+    ) => {
+    return fetchJson(
+        `/flavors/${flavorId}`,
+        {
+        method: "DELETE"
+        }
+    );
+};
+
+export const getToppings = () => {
+    return fetchJson("/toppings");
+};
+
+export const createTopping = (data) => {
+    return fetchJson("/toppings", {
+        method: "POST",
+        headers: {
+        "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    });
+};
+
+export const updateTopping = (
+    id,
+    data
+    ) => {
+    return fetchJson(`/toppings/${id}`, {
+        method: "PUT",
+        headers: {
+        "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    });
+};
+
+export const deleteTopping = (id) => {
+    return fetchJson(`/toppings/${id}`, {
+        method: "DELETE"
+    });
+};
