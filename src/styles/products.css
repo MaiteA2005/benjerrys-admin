@@ -185,7 +185,7 @@
     background: #fef0ed;
 }
 
-.product-empty-state {
+.product-emptyState {
     grid-column: 1 / -1;
     min-height: 420px;
     background: #ffffff;
@@ -193,7 +193,7 @@
     border-radius: 18px;
 }
 
-.product-empty-state__icon {
+.product-emptyStateIcon {
     display: grid;
     width: 64px;
     height: 64px;

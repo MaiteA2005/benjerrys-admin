@@ -33,24 +33,24 @@ export const renderSidebar = (
     ) => {
     return `
         <aside class="sidebar">
-        <div class="sidebar__brand">
+        <div class="sidebarBrand">
             <img
-            class="sidebar__logo"
+            class="sidebarLogo"
             src="${logoImage}"
             alt="Ben & Jerry's"
             />
 
-            <p class="sidebar__subtitle">
+            <p class="sidebarSubtitle">
             Ice Cream Factory
             </p>
 
-            <span class="sidebar__badge">
+            <span class="sidebarBadge">
             Admin
             </span>
         </div>
 
         <nav
-            class="sidebar__navigation"
+            class="sidebarNavigation"
             aria-label="Adminnavigatie"
         >
             ${navigationItems
@@ -58,10 +58,10 @@ export const renderSidebar = (
                 (item) => `
                 <button
                     class="
-                    navigation-item
+                    navigationItem
                     ${
                         activePage === item.id
-                        ? "navigation-item--active"
+                        ? "isActive"
                         : ""
                     }
                     "
@@ -69,7 +69,7 @@ export const renderSidebar = (
                     data-navigation-page="${item.id}"
                 >
                     <span
-                    class="navigation-item__icon"
+                    class="navIcon"
                     aria-hidden="true"
                     >
                     ${item.icon}
@@ -84,14 +84,14 @@ export const renderSidebar = (
             .join("")}
         </nav>
 
-        <div class="sidebar__footer">
-            <span class="sidebar__footer-label">
+        <div class="sidebarFooter">
+            <span class="sidebarFooterLabel">
             Beheeromgeving
             </span>
 
-            <span class="sidebar__footer-status">
+            <span class="sidebarFooterStatus">
             <span
-                class="sidebar__status-dot"
+                class="StatusDot"
                 aria-hidden="true"
             ></span>
 

@@ -27,16 +27,16 @@ export const renderFlavorsPage = async (container) => {
     container.innerHTML = `
         <header class="admin-header">
         <div>
-            <p class="admin-header__eyebrow">Productbeheer</p>
-            <h1 class="admin-header__title">Smaken</h1>
-            <p class="admin-header__description">
+            <p class="adminSubtitle">Productbeheer</p>
+            <h1 class="adminTitle">Smaken</h1>
+            <p class="adminDescription">
             Beheer de namen, kleuren en prijzen van de beschikbare smaken.
             </p>
         </div>
 
         <button
             id="add-flavor-button"
-            class="refresh-button"
+            class="refreshButton"
             type="button"
         >
             + Nieuwe smaak
@@ -45,7 +45,7 @@ export const renderFlavorsPage = async (container) => {
 
         <div
         id="flavor-feedback"
-        class="feedback-message"
+        class="feedbackMessage"
         hidden
         ></div>
 
@@ -56,26 +56,26 @@ export const renderFlavorsPage = async (container) => {
 
         <div id="flavor-form-modal" class="modal" hidden>
         <div
-            class="modal__overlay"
+            class="modalOverlay"
             data-close-flavor-form
         ></div>
 
         <section
-            class="modal__dialog modal__dialog--form"
+            class="modalDialog modalDialogForm"
             role="dialog"
             aria-modal="true"
             aria-labelledby="flavor-form-title"
         >
-            <header class="form-modal__header">
+            <header class="formHeader">
             <div>
-                <p class="form-modal__eyebrow">Smaakbeheer</p>
-                <h2 id="flavor-form-title" class="modal__title">
+                <p class="formSubtitle">Smaakbeheer</p>
+                <h2 id="flavor-form-title" class="modalTitle">
                 Nieuwe smaak
                 </h2>
             </div>
 
             <button
-                class="modal-close-button"
+                class="closeButton"
                 type="button"
                 data-close-flavor-form
                 aria-label="Venster sluiten"
@@ -84,7 +84,7 @@ export const renderFlavorsPage = async (container) => {
             </button>
             </header>
 
-            <form id="flavor-form" class="admin-form" novalidate>
+            <form id="flavor-form" class="adminForm" novalidate>
             <section class="flavor-form-preview">
                 <div
                 id="flavor-preview-scoop"
@@ -106,23 +106,23 @@ export const renderFlavorsPage = async (container) => {
                 </div>
             </section>
 
-            <label class="admin-field">
-                <span class="admin-field__label">Naam</span>
+            <label class="formField">
+                <span class="fieldLabel">Naam</span>
                 <input
                 id="flavor-name"
-                class="admin-field__input"
+                class="fieldInput"
                 type="text"
                 maxlength="50"
                 placeholder="Bijvoorbeeld Chocolate Fudge"
                 />
                 <span
                 id="flavor-name-error"
-                class="admin-field__error"
+                class="formFieldError"
                 ></span>
             </label>
 
-            <label class="admin-field">
-                <span class="admin-field__label">Kleur</span>
+            <label class="formField">
+                <span class="fieldLabel">Kleur</span>
                 <div class="admin-color-picker">
                 <input
                     id="flavor-color"
@@ -137,17 +137,17 @@ export const renderFlavorsPage = async (container) => {
                 </div>
                 <span
                 id="flavor-color-error"
-                class="admin-field__error"
+                class="formFieldError"
                 ></span>
             </label>
 
-            <label class="admin-field">
-                <span class="admin-field__label">Prijs</span>
-                <div class="price-input">
-                <span class="price-input__prefix">€</span>
+            <label class="formField">
+                <span class="fieldLabel">Prijs</span>
+                <div class="priceInput">
+                <span class="priceInputPrefix">€</span>
                 <input
                     id="flavor-price"
-                    class="admin-field__input admin-field__input--price"
+                    class="fieldInput fieldInputPrice"
                     type="number"
                     min="0"
                     step="0.01"
@@ -156,13 +156,13 @@ export const renderFlavorsPage = async (container) => {
                 </div>
                 <span
                 id="flavor-price-error"
-                class="admin-field__error"
+                class="formFieldError"
                 ></span>
             </label>
 
-            <div class="modal__actions">
+            <div class="modalActions">
                 <button
-                class="button button--secondary"
+                class="button button secondary"
                 type="button"
                 data-close-flavor-form
                 >
@@ -170,7 +170,7 @@ export const renderFlavorsPage = async (container) => {
                 </button>
                 <button
                 id="save-flavor-button"
-                class="button button--primary"
+                class="button buttonPrimary"
                 type="submit"
                 >
                 Smaak toevoegen
@@ -182,20 +182,20 @@ export const renderFlavorsPage = async (container) => {
 
         <div id="delete-flavor-modal" class="modal" hidden>
         <div
-            class="modal__overlay"
+            class="modalOverlay"
             data-close-delete-flavor
         ></div>
 
-        <section class="modal__dialog" role="dialog" aria-modal="true">
-            <h2 class="modal__title">Smaak verwijderen?</h2>
+        <section class="modalDialog" role="dialog" aria-modal="true">
+            <h2 class="modalTitle">Smaak verwijderen?</h2>
             <p
             id="delete-flavor-description"
-            class="modal__description"
+            class="modalDescription"
             ></p>
 
-            <div class="modal__actions">
+            <div class="modalActions">
             <button
-                class="button button--secondary"
+                class="button button secondary"
                 type="button"
                 data-close-delete-flavor
             >
@@ -203,7 +203,7 @@ export const renderFlavorsPage = async (container) => {
             </button>
             <button
                 id="confirm-delete-flavor-button"
-                class="button button--danger"
+                class="button danger"
                 type="button"
             >
                 Verwijderen
@@ -232,8 +232,8 @@ export const renderFlavorsPage = async (container) => {
         $(`#flavor-${field}-error`).textContent = "";
         });
 
-        nameInput.classList.remove("admin-field__input--error");
-        priceInput.classList.remove("admin-field__input--error");
+        nameInput.classList.remove("fieldInput--error");
+        priceInput.classList.remove("fieldInput--error");
     };
 
     const updatePreview = () => {
@@ -303,7 +303,7 @@ export const renderFlavorsPage = async (container) => {
         if (!nameInput.value.trim()) {
         $("#flavor-name-error").textContent =
             "Vul een naam in.";
-        nameInput.classList.add("admin-field__input--error");
+        nameInput.classList.add("fieldInput--error");
         valid = false;
         }
 
@@ -316,7 +316,7 @@ export const renderFlavorsPage = async (container) => {
         if (!isValidPrice(priceInput.value)) {
         $("#flavor-price-error").textContent =
             "Vul een geldige prijs in.";
-        priceInput.classList.add("admin-field__input--error");
+        priceInput.classList.add("fieldInput--error");
         valid = false;
         }
 
@@ -326,7 +326,7 @@ export const renderFlavorsPage = async (container) => {
     const render = () => {
         if (!flavors.length) {
         list.innerHTML = `
-            <section class="empty-state product-empty-state">
+            <section class="emptyState product-emptyState">
             <h2>Nog geen smaken</h2>
             <p>Voeg je eerste smaak toe.</p>
             </section>
@@ -388,8 +388,8 @@ export const renderFlavorsPage = async (container) => {
 
     const load = async () => {
         list.innerHTML = `
-        <div class="loading-state">
-            <div class="loading-spinner"></div>
+        <div class="loadingState">
+            <div class="loadingSpinner"></div>
             <p>Smaken laden...</p>
         </div>
         `;
@@ -399,11 +399,11 @@ export const renderFlavorsPage = async (container) => {
         render();
         } catch (error) {
         list.innerHTML = `
-            <section class="error-state">
+            <section class="errorState">
             <h2>Smaken laden mislukt</h2>
             <p>${escapeHtml(error.message)}</p>
             <button
-                class="button button--primary"
+                class="button buttonPrimary"
                 data-retry-flavors
                 type="button"
             >

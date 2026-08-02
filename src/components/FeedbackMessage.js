@@ -7,7 +7,7 @@ export const createFeedbackMessage = (element) => {
         element.hidden = false;
         element.textContent = message;
         element.className =
-        `feedback-message feedback-message--${type}`;
+        `feedbackMessage feedbackMessage--${type}`;
 
         timeoutId = window.setTimeout(() => {
         element.hidden = true;

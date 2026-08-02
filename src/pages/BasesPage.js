@@ -30,16 +30,16 @@ export const renderBasesPage = async (container) => {
     container.innerHTML = `
         <header class="admin-header">
         <div>
-            <p class="admin-header__eyebrow">Productbeheer</p>
-            <h1 class="admin-header__title">Bases</h1>
-            <p class="admin-header__description">
+            <p class="adminSubtitle">Productbeheer</p>
+            <h1 class="adminTitle">Bases</h1>
+            <p class="adminDescription">
             Beheer de beschikbare hoorntjes en potjes.
             </p>
         </div>
 
         <button
             id="add-base-button"
-            class="refresh-button"
+            class="refreshButton"
             type="button"
         >
             + Nieuwe base
@@ -48,30 +48,30 @@ export const renderBasesPage = async (container) => {
 
         <div
         id="base-feedback"
-        class="feedback-message"
+        class="feedbackMessage"
         hidden
         ></div>
 
         <section id="bases-container" class="product-grid"></section>
 
         <div id="base-form-modal" class="modal" hidden>
-        <div class="modal__overlay" data-close-base-form></div>
+        <div class="modalOverlay" data-close-base-form></div>
 
         <section
-            class="modal__dialog modal__dialog--form"
+            class="modalDialog modalDialogForm"
             role="dialog"
             aria-modal="true"
         >
-            <header class="form-modal__header">
+            <header class="formHeader">
             <div>
-                <p class="form-modal__eyebrow">Basebeheer</p>
-                <h2 id="base-form-title" class="modal__title">
+                <p class="formSubtitle">Basebeheer</p>
+                <h2 id="base-form-title" class="modalTitle">
                 Nieuwe base
                 </h2>
             </div>
 
             <button
-                class="modal-close-button"
+                class="closeButton"
                 type="button"
                 data-close-base-form
                 aria-label="Venster sluiten"
@@ -80,61 +80,61 @@ export const renderBasesPage = async (container) => {
             </button>
             </header>
 
-            <form id="base-form" class="admin-form" novalidate>
-            <label class="admin-field">
-                <span class="admin-field__label">Naam</span>
+            <form id="base-form" class="adminForm" novalidate>
+            <label class="formField">
+                <span class="fieldLabel">Naam</span>
                 <input
                 id="base-name"
-                class="admin-field__input"
+                class="fieldInput"
                 type="text"
                 maxlength="50"
                 placeholder="Bijvoorbeeld Hoorntje"
                 />
-                <span id="base-name-error" class="admin-field__error"></span>
+                <span id="base-name-error" class="formFieldError"></span>
             </label>
 
-            <label class="admin-field">
-                <span class="admin-field__label">Type</span>
-                <select id="base-type" class="admin-field__input">
+            <label class="formField">
+                <span class="fieldLabel">Type</span>
+                <select id="base-type" class="fieldInput">
                 <option value="cone">Hoorntje</option>
                 <option value="cup">Potje</option>
                 </select>
-                <span id="base-type-error" class="admin-field__error"></span>
+                <span id="base-type-error" class="formFieldError"></span>
             </label>
 
-            <label class="admin-field">
-                <span class="admin-field__label">Prijs</span>
-                <div class="price-input">
-                <span class="price-input__prefix">€</span>
+            <label class="formField">
+                <span class="fieldLabel">Prijs</span>
+                <div class="priceInput">
+                <span class="priceInputPrefix">€</span>
                 <input
                     id="base-price"
-                    class="admin-field__input admin-field__input--price"
+                    class="fieldInput fieldInputPrice"
                     type="number"
                     min="0"
                     step="0.01"
                     value="0"
                 />
                 </div>
-                <span id="base-price-error" class="admin-field__error"></span>
+                <span id="base-price-error" class="formFieldError"></span>
             </label>
 
-            <label class="admin-field">
-                <span class="admin-field__label">Model-URL</span>
+            <label class="formField">
+                <span class="fieldLabel">Model-URL</span>
                 <input
                 id="base-model-url"
-                class="admin-field__input"
+                class="fieldInput"
                 type="text"
                 placeholder="/models/cone.glb"
                 />
                 <span
                 id="base-model-url-error"
-                class="admin-field__error"
+                class="formFieldError"
                 ></span>
             </label>
 
-            <div class="modal__actions">
+            <div class="modalActions">
                 <button
-                class="button button--secondary"
+                class="button button secondary"
                 type="button"
                 data-close-base-form
                 >
@@ -142,7 +142,7 @@ export const renderBasesPage = async (container) => {
                 </button>
                 <button
                 id="save-base-button"
-                class="button button--primary"
+                class="button buttonPrimary"
                 type="submit"
                 >
                 Base toevoegen
@@ -153,18 +153,18 @@ export const renderBasesPage = async (container) => {
         </div>
 
         <div id="delete-base-modal" class="modal" hidden>
-        <div class="modal__overlay" data-close-delete-base></div>
+        <div class="modalOverlay" data-close-delete-base></div>
 
-        <section class="modal__dialog" role="dialog" aria-modal="true">
-            <h2 class="modal__title">Base verwijderen?</h2>
+        <section class="modalDialog" role="dialog" aria-modal="true">
+            <h2 class="modalTitle">Base verwijderen?</h2>
             <p
             id="delete-base-description"
-            class="modal__description"
+            class="modalDescription"
             ></p>
 
-            <div class="modal__actions">
+            <div class="modalActions">
             <button
-                class="button button--secondary"
+                class="button button secondary"
                 type="button"
                 data-close-delete-base
             >
@@ -172,7 +172,7 @@ export const renderBasesPage = async (container) => {
             </button>
             <button
                 id="confirm-delete-base-button"
-                class="button button--danger"
+                class="button danger"
                 type="button"
             >
                 Verwijderen
@@ -204,7 +204,7 @@ export const renderBasesPage = async (container) => {
         priceInput,
         modelUrlInput
         ].forEach((input) => {
-        input.classList.remove("admin-field__input--error");
+        input.classList.remove("fieldInput--error");
         });
     };
 
@@ -256,7 +256,7 @@ export const renderBasesPage = async (container) => {
 
         const setError = (field, input, message) => {
         $(`#base-${field}-error`).textContent = message;
-        input.classList.add("admin-field__input--error");
+        input.classList.add("fieldInput hasError");
         valid = false;
         };
 
@@ -286,7 +286,7 @@ export const renderBasesPage = async (container) => {
     const render = () => {
         if (!bases.length) {
         list.innerHTML = `
-            <section class="empty-state product-empty-state">
+            <section class="emptyState product-emptyState">
             <h2>Nog geen bases</h2>
             <p>Voeg je eerste hoorntje of potje toe.</p>
             </section>
@@ -352,8 +352,8 @@ export const renderBasesPage = async (container) => {
 
     const load = async () => {
         list.innerHTML = `
-        <div class="loading-state">
-            <div class="loading-spinner"></div>
+        <div class="loadingState">
+            <div class="loadingSpinner"></div>
             <p>Bases laden...</p>
         </div>
         `;
@@ -363,11 +363,11 @@ export const renderBasesPage = async (container) => {
         render();
         } catch (error) {
         list.innerHTML = `
-            <section class="error-state">
+            <section class="errorState">
             <h2>Bases laden mislukt</h2>
             <p>${escapeHtml(error.message)}</p>
             <button
-                class="button button--primary"
+                class="button buttonPrimary"
                 data-retry-bases
                 type="button"
             >

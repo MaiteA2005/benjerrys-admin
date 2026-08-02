@@ -121,7 +121,7 @@
     border: 1px solid
         rgb(255 255 255 / 80%);
     border-radius: 999px;
-    font-family: monospace;
+    font-family: inherit;
     font-size: 0.8rem;
     font-weight: 700;
 }
@@ -207,7 +207,7 @@ span:nth-child(5) {
 
 .topping-form-preview__color {
     color: #717b75;
-    font-family: monospace;
+    font-family: inherit;
     font-size: 0.82rem;
 }
 

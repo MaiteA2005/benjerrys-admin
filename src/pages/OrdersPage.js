@@ -96,7 +96,7 @@ const renderFlavorList = (
     ) => {
     if (!flavors.length) {
         return `
-        <p class="empty-value">
+        <p class="emptyValue">
             Geen smaken gevonden
         </p>
         `;
@@ -156,23 +156,23 @@ export const renderOrdersPage =
         container.innerHTML = `
         <header class="admin-header">
             <div>
-            <p class="admin-header__eyebrow">
+            <p class="adminSubtitle">
                 Orderbeheer
             </p>
 
-            <h1 class="admin-header__title">
+            <h1 class="adminTitle">
                 Bestellingen
             </h1>
 
-            <p class="admin-header__description">
+            <p class="adminDescription">
                 Bekijk en beheer alle bestellingen
                 uit de ice cream factory.
             </p>
             </div>
 
             <button
-            id="refresh-button"
-            class="refresh-button"
+            id="refreshButton"
+            class="refreshButton"
             type="button"
             >
             Vernieuwen
@@ -187,7 +187,7 @@ export const renderOrdersPage =
         <section class="orders-section">
             <div class="orders-toolbar">
             <label class="search-field">
-                <span class="visually-hidden">
+                <span class="visuallyHidden">
                 Bestellingen zoeken
                 </span>
 
@@ -200,7 +200,7 @@ export const renderOrdersPage =
             </label>
 
             <label class="filter-field">
-                <span class="visually-hidden">
+                <span class="visuallyHidden">
                 Filter op status
                 </span>
 
@@ -226,8 +226,8 @@ export const renderOrdersPage =
             </div>
 
             <div
-            id="feedback-message"
-            class="feedback-message"
+            id="feedbackMessage"
+            class="feedbackMessage"
             hidden
             ></div>
 
@@ -243,36 +243,36 @@ export const renderOrdersPage =
             hidden
         >
             <div
-            class="modal__overlay"
+            class="modalOverlay"
             data-close-modal
             ></div>
 
             <section
-            class="modal__dialog"
+            class="modalDialog"
             role="dialog"
             aria-modal="true"
             >
-            <h2 class="modal__title">
+            <h2 class="modalTitle">
                 Bestelling verwijderen?
             </h2>
 
-            <p class="modal__description">
+            <p class="modalDescription">
                 Deze actie kan niet ongedaan
                 worden gemaakt.
             </p>
 
-            <div class="modal__actions">
+            <div class="modalActions">
                 <button
-                id="cancel-delete-button"
-                class="button button--secondary"
+                id="cancel-deleteButton"
+                class="button button secondary"
                 type="button"
                 >
                 Annuleren
                 </button>
 
                 <button
-                id="confirm-delete-button"
-                class="button button--danger"
+                id="confirm-deleteButton"
+                class="button danger"
                 type="button"
                 >
                 Verwijderen
@@ -294,7 +294,7 @@ export const renderOrdersPage =
 
         const refreshButton =
         container.querySelector(
-            "#refresh-button"
+            "#refreshButton"
         );
 
         const searchInput =
@@ -309,7 +309,7 @@ export const renderOrdersPage =
 
         const feedbackMessage =
         container.querySelector(
-            "#feedback-message"
+            "#feedbackMessage"
         );
 
         const deleteModal =
@@ -319,12 +319,12 @@ export const renderOrdersPage =
 
         const cancelDeleteButton =
         container.querySelector(
-            "#cancel-delete-button"
+            "#cancel-deleteButton"
         );
 
         const confirmDeleteButton =
         container.querySelector(
-            "#confirm-delete-button"
+            "#confirm-deleteButton"
         );
 
         const showFeedback = (
@@ -336,7 +336,7 @@ export const renderOrdersPage =
             message;
 
         feedbackMessage.className =
-            `feedback-message feedback-message--${type}`;
+            `feedbackMessage feedbackMessage--${type}`;
         };
 
         const renderStatistics = () => {
@@ -437,7 +437,7 @@ export const renderOrdersPage =
 
         if (!filteredOrders.length) {
             ordersContainer.innerHTML = `
-            <section class="empty-state">
+            <section class="emptyState">
                 <h2>
                 Geen bestellingen gevonden
                 </h2>
@@ -636,7 +636,7 @@ export const renderOrdersPage =
                         </label>
 
                         <button
-                        class="delete-button"
+                        class="deleteButton"
                         type="button"
                         data-delete-order
                         data-order-id="${order._id}"
@@ -658,8 +658,8 @@ export const renderOrdersPage =
 
         const loadOrders = async () => {
         ordersContainer.innerHTML = `
-            <div class="loading-state">
-            <div class="loading-spinner"></div>
+            <div class="loadingState">
+            <div class="loadingSpinner"></div>
 
             <p>
                 Bestellingen laden...
@@ -678,7 +678,7 @@ export const renderOrdersPage =
             console.error(error);
 
             ordersContainer.innerHTML = `
-            <section class="error-state">
+            <section class="errorState">
                 <h2>
                 Bestellingen laden mislukt
                 </h2>
@@ -700,7 +700,7 @@ export const renderOrdersPage =
         orderToDelete = null;
 
         document.body.classList.remove(
-            "modal-open"
+            "modalOpen"
         );
         };
 
@@ -764,7 +764,7 @@ export const renderOrdersPage =
             deleteModal.hidden = false;
 
             document.body.classList.add(
-            "modal-open"
+            "modalOpen"
             );
         }
         );

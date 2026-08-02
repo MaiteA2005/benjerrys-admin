@@ -5,12 +5,12 @@ export const createModal = ({
     }) => {
     const open = () => {
         element.hidden = false;
-        document.body.classList.add("modal-open");
+        document.body.classList.add("modalOpen");
     };
 
     const close = () => {
         element.hidden = true;
-        document.body.classList.remove("modal-open");
+        document.body.classList.remove("modalOpen");
         onClose?.();
     };
 

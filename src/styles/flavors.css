@@ -102,7 +102,7 @@
     border: 1px solid
         rgb(255 255 255 / 80%);
     border-radius: 999px;
-    font-family: monospace;
+    font-family: inherit;
     font-size: 0.8rem;
     font-weight: 700;
 }
@@ -170,7 +170,7 @@
 
 .flavor-form-preview__color {
     color: #717b75;
-    font-family: monospace;
+    font-family: inherit;
     font-size: 0.82rem;
 }
 
@@ -230,7 +230,7 @@
 
 .admin-color-picker__value {
     color: #66706a;
-    font-family: monospace;
+    font-family: inherit;
     font-size: 0.9rem;
 }
 

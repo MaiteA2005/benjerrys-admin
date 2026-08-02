@@ -61,14 +61,14 @@ const renderApplication =
       getCurrentPage();
 
     app.innerHTML = `
-      <div class="admin-layout">
+      <div class="adminLayout">
         ${renderSidebar(
           currentPage
         )}
 
         <main
           id="page-content"
-          class="admin-main"
+          class="adminMain"
         ></main>
       </div>
     `;

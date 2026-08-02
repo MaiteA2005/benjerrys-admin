@@ -163,23 +163,23 @@ export const renderDashboardPage =
         container.innerHTML = `
         <header class="admin-header">
             <div>
-            <p class="admin-header__eyebrow">
+            <p class="adminSubtitle">
                 Overzicht
             </p>
 
-            <h1 class="admin-header__title">
+            <h1 class="adminTitle">
                 Dashboard
             </h1>
 
-            <p class="admin-header__description">
+            <p class="adminDescription">
                 Bekijk in één oogopslag wat er
                 gebeurt in de ice cream factory.
             </p>
             </div>
 
             <button
-            id="dashboard-refresh-button"
-            class="refresh-button"
+            id="dashboard-refreshButton"
+            class="refreshButton"
             type="button"
             >
             Vernieuwen
@@ -190,8 +190,8 @@ export const renderDashboardPage =
             id="dashboard-content"
             class="dashboard-content"
         >
-            <div class="loading-state">
-            <div class="loading-spinner"></div>
+            <div class="loadingState">
+            <div class="loadingSpinner"></div>
 
             <p>
                 Dashboard laden...
@@ -207,7 +207,7 @@ export const renderDashboardPage =
 
         const refreshButton =
         container.querySelector(
-            "#dashboard-refresh-button"
+            "#dashboard-refreshButton"
         );
 
         const loadDashboard = async () => {
@@ -216,8 +216,8 @@ export const renderDashboardPage =
             "Laden...";
 
         dashboardContent.innerHTML = `
-            <div class="loading-state">
-            <div class="loading-spinner"></div>
+            <div class="loadingState">
+            <div class="loadingSpinner"></div>
 
             <p>
                 Dashboard laden...
@@ -501,7 +501,7 @@ export const renderDashboardPage =
             console.error(error);
 
             dashboardContent.innerHTML = `
-            <section class="error-state">
+            <section class="errorState">
                 <h2>
                 Dashboard laden mislukt
                 </h2>
@@ -512,7 +512,7 @@ export const renderDashboardPage =
 
                 <button
                 id="dashboard-retry-button"
-                class="button button--primary"
+                class="button buttonPrimary"
                 type="button"
                 >
                 Opnieuw proberen

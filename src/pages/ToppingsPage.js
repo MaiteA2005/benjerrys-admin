@@ -27,16 +27,16 @@ export const renderToppingsPage = async (container) => {
     container.innerHTML = `
         <header class="admin-header">
         <div>
-            <p class="admin-header__eyebrow">Productbeheer</p>
-            <h1 class="admin-header__title">Toppings</h1>
-            <p class="admin-header__description">
+            <p class="adminSubtitle">Productbeheer</p>
+            <h1 class="adminTitle">Toppings</h1>
+            <p class="adminDescription">
             Beheer de toppings die klanten aan hun ijsje kunnen toevoegen.
             </p>
         </div>
 
         <button
             id="add-topping-button"
-            class="refresh-button"
+            class="refreshButton"
             type="button"
         >
             + Nieuwe topping
@@ -45,7 +45,7 @@ export const renderToppingsPage = async (container) => {
 
         <div
         id="topping-feedback"
-        class="feedback-message"
+        class="feedbackMessage"
         hidden
         ></div>
 
@@ -56,26 +56,26 @@ export const renderToppingsPage = async (container) => {
 
         <div id="topping-form-modal" class="modal" hidden>
         <div
-            class="modal__overlay"
+            class="modalOverlay"
             data-close-topping-form
         ></div>
 
         <section
-            class="modal__dialog modal__dialog--form"
+            class="modalDialog modalDialogForm"
             role="dialog"
             aria-modal="true"
             aria-labelledby="topping-form-title"
         >
-            <header class="form-modal__header">
+            <header class="formHeader">
             <div>
-                <p class="form-modal__eyebrow">Toppingbeheer</p>
-                <h2 id="topping-form-title" class="modal__title">
+                <p class="formSubtitle">Toppingbeheer</p>
+                <h2 id="topping-form-title" class="modalTitle">
                 Nieuwe topping
                 </h2>
             </div>
 
             <button
-                class="modal-close-button"
+                class="closeButton"
                 type="button"
                 data-close-topping-form
                 aria-label="Venster sluiten"
@@ -84,7 +84,7 @@ export const renderToppingsPage = async (container) => {
             </button>
             </header>
 
-            <form id="topping-form" class="admin-form" novalidate>
+            <form id="topping-form" class="adminForm" novalidate>
             <section class="topping-form-preview">
                 <div
                 id="topping-preview-visual"
@@ -109,23 +109,23 @@ export const renderToppingsPage = async (container) => {
                 </div>
             </section>
 
-            <label class="admin-field">
-                <span class="admin-field__label">Naam</span>
+            <label class="formField">
+                <span class="fieldLabel">Naam</span>
                 <input
                 id="topping-name"
-                class="admin-field__input"
+                class="fieldInput"
                 type="text"
                 maxlength="50"
                 placeholder="Bijvoorbeeld Chocolate Fudge"
                 />
                 <span
                 id="topping-name-error"
-                class="admin-field__error"
+                class="formFieldError"
                 ></span>
             </label>
 
-            <label class="admin-field">
-                <span class="admin-field__label">Kleur</span>
+            <label class="formField">
+                <span class="fieldLabel">Kleur</span>
                 <div class="admin-color-picker">
                 <input
                     id="topping-color"
@@ -140,17 +140,17 @@ export const renderToppingsPage = async (container) => {
                 </div>
                 <span
                 id="topping-color-error"
-                class="admin-field__error"
+                class="formFieldError"
                 ></span>
             </label>
 
-            <label class="admin-field">
-                <span class="admin-field__label">Prijs</span>
-                <div class="price-input">
-                <span class="price-input__prefix">€</span>
+            <label class="formField">
+                <span class="fieldLabel">Prijs</span>
+                <div class="priceInput">
+                <span class="priceInputPrefix">€</span>
                 <input
                     id="topping-price"
-                    class="admin-field__input admin-field__input--price"
+                    class="fieldInput fieldInputPrice"
                     type="number"
                     min="0"
                     step="0.01"
@@ -159,13 +159,13 @@ export const renderToppingsPage = async (container) => {
                 </div>
                 <span
                 id="topping-price-error"
-                class="admin-field__error"
+                class="formFieldError"
                 ></span>
             </label>
 
-            <div class="modal__actions">
+            <div class="modalActions">
                 <button
-                class="button button--secondary"
+                class="button button secondary"
                 type="button"
                 data-close-topping-form
                 >
@@ -173,7 +173,7 @@ export const renderToppingsPage = async (container) => {
                 </button>
                 <button
                 id="save-topping-button"
-                class="button button--primary"
+                class="button buttonPrimary"
                 type="submit"
                 >
                 Topping toevoegen
@@ -185,20 +185,20 @@ export const renderToppingsPage = async (container) => {
 
         <div id="delete-topping-modal" class="modal" hidden>
         <div
-            class="modal__overlay"
+            class="modalOverlay"
             data-close-delete-topping
         ></div>
 
-        <section class="modal__dialog" role="dialog" aria-modal="true">
-            <h2 class="modal__title">Topping verwijderen?</h2>
+        <section class="modalDialog" role="dialog" aria-modal="true">
+            <h2 class="modalTitle">Topping verwijderen?</h2>
             <p
             id="delete-topping-description"
-            class="modal__description"
+            class="modalDescription"
             ></p>
 
-            <div class="modal__actions">
+            <div class="modalActions">
             <button
-                class="button button--secondary"
+                class="button button secondary"
                 type="button"
                 data-close-delete-topping
             >
@@ -206,7 +206,7 @@ export const renderToppingsPage = async (container) => {
             </button>
             <button
                 id="confirm-delete-topping-button"
-                class="button button--danger"
+                class="button danger"
                 type="button"
             >
                 Verwijderen
@@ -235,8 +235,8 @@ export const renderToppingsPage = async (container) => {
         $(`#topping-${field}-error`).textContent = "";
         });
 
-        nameInput.classList.remove("admin-field__input--error");
-        priceInput.classList.remove("admin-field__input--error");
+        nameInput.classList.remove("fieldInput--error");
+        priceInput.classList.remove("fieldInput--error");
     };
 
     const updatePreview = () => {
@@ -309,7 +309,7 @@ export const renderToppingsPage = async (container) => {
         if (!nameInput.value.trim()) {
         $("#topping-name-error").textContent =
             "Vul een naam in.";
-        nameInput.classList.add("admin-field__input--error");
+        nameInput.classList.add("fieldInput--error");
         valid = false;
         }
 
@@ -322,7 +322,7 @@ export const renderToppingsPage = async (container) => {
         if (!isValidPrice(priceInput.value)) {
         $("#topping-price-error").textContent =
             "Vul een geldige prijs in.";
-        priceInput.classList.add("admin-field__input--error");
+        priceInput.classList.add("fieldInput--error");
         valid = false;
         }
 
@@ -332,7 +332,7 @@ export const renderToppingsPage = async (container) => {
     const render = () => {
         if (!toppings.length) {
         list.innerHTML = `
-            <section class="empty-state product-empty-state">
+            <section class="emptyState product-emptyState">
             <h2>Nog geen toppings</h2>
             <p>Voeg je eerste topping toe.</p>
             </section>
@@ -397,8 +397,8 @@ export const renderToppingsPage = async (container) => {
 
     const load = async () => {
         list.innerHTML = `
-        <div class="loading-state">
-            <div class="loading-spinner"></div>
+        <div class="loadingState">
+            <div class="loadingSpinner"></div>
             <p>Toppings laden...</p>
         </div>
         `;
@@ -408,11 +408,11 @@ export const renderToppingsPage = async (container) => {
         render();
         } catch (error) {
         list.innerHTML = `
-            <section class="error-state">
+            <section class="errorState">
             <h2>Toppings laden mislukt</h2>
             <p>${escapeHtml(error.message)}</p>
             <button
-                class="button button--primary"
+                class="button buttonPrimary"
                 data-retry-toppings
                 type="button"
             >
