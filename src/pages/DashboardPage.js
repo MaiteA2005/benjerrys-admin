@@ -19,9 +19,9 @@ const formatPrice = (price) => {
         currency: "EUR"
         }
     ).format(Number(price || 0));
-    };
+};
 
-    const formatDate = (dateValue) => {
+const formatDate = (dateValue) => {
     if (!dateValue) {
         return "Onbekende datum";
     }

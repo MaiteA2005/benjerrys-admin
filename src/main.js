@@ -1,4 +1,9 @@
-import "./style.css";
+import "./styles/main.css";
+import "./styles/dashboard.css";
+import "./styles/orders.css";
+import "./styles/products.css";
+import "./styles/flavors.css";
+import "./styles/toppings.css";
 
 import logoImage from "./assets/b&j-logo.svg";
 
