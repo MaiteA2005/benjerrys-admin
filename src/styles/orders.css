@@ -6,7 +6,7 @@
     margin-bottom: 28px;
 }
 
-.statistic-card {
+.statisticCard {
     padding: 20px;
     background: #ffffff;
     border: 1px solid #dde4df;
@@ -16,17 +16,17 @@
         rgb(35 31 32 / 5%);
 }
 
-.statistic-card__label {
+.statisticCardLabel {
     display: block;
     margin-bottom: 10px;
     color: #66706a;
 }
 
-.statistic-card__value {
+.statisticCardValue {
     font-size: 2rem;
 }
 
-.orders-section {
+.ordersSection {
     padding: 22px;
     background: #ffffff;
     border: 1px solid #dde4df;
@@ -36,7 +36,7 @@
         rgb(35 31 32 / 6%);
 }
 
-.orders-toolbar {
+.ordersToolbar {
     display: grid;
     grid-template-columns:
         minmax(0, 1fr)
@@ -45,9 +45,9 @@
     margin-bottom: 22px;
 }
 
-.search-field__input,
-.filter-field__select,
-.status-field__select {
+.searchFieldInput,
+.filterFieldSelect,
+.statusFieldSelect {
     width: 100%;
     min-height: 44px;
     padding: 0 13px;
@@ -58,26 +58,26 @@
     outline: none;
 }
 
-.search-field__input:focus,
-.filter-field__select:focus,
-.status-field__select:focus {
+.searchFieldInput:focus,
+.filterFieldSelect:focus,
+.statusFieldSelect:focus {
     border-color: #799848;
     box-shadow: 0 0 0 3px
         rgb(121 152 72 / 15%);
 }
 
-.orders-container {
+.ordersContainer {
     display: grid;
     gap: 16px;
 }
 
-.order-card {
+.orderCard {
     overflow: hidden;
     border: 1px solid #dce3df;
     border-radius: 14px;
 }
 
-.order-card__header {
+.orderCardHeader {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -87,30 +87,30 @@
     border-bottom: 1px solid #dce3df;
 }
 
-.order-card__heading {
+.orderCardHeading {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 10px;
 }
 
-.order-card__title {
+.orderCardTitle {
     margin: 0;
     font-size: 1.15rem;
 }
 
-.order-card__date {
+.orderCardDate {
     margin: 6px 0 0;
     color: #738078;
     font-size: 0.85rem;
 }
 
-.order-card__price {
+.orderCardPrice {
     white-space: nowrap;
     font-size: 1.25rem;
 }
 
-.order-card__content {
+.orderCardContent {
     display: grid;
     grid-template-columns:
         1fr
@@ -120,11 +120,11 @@
     padding: 20px;
 }
 
-.order-detail {
+.orderDetail {
     min-width: 0;
 }
 
-.order-detail__title {
+.orderDetailTitle {
     margin: 0 0 10px;
     color: #738078;
     font-size: 0.78rem;
@@ -132,35 +132,35 @@
     text-transform: uppercase;
 }
 
-.order-detail__primary {
+.orderDetailPrimary {
     margin: 0 0 8px;
 }
 
-.order-detail__secondary {
+.orderDetailSecondary {
     margin: 0;
     color: #66706a;
     line-height: 1.55;
 }
 
-.order-detail--actions {
+.orderDetail--actions {
     display: flex;
     flex-direction: column;
     gap: 14px;
 }
 
-.flavor-list {
+.flavorList {
     display: grid;
     gap: 7px;
     margin: 10px 0;
 }
 
-.flavor-item {
+.flavorItem {
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-.flavor-item__color {
+.flavorItemColor {
     width: 17px;
     height: 17px;
     flex: 0 0 auto;
@@ -169,62 +169,62 @@
     border-radius: 50%;
 }
 
-.status-field {
+.statusField {
     display: grid;
     gap: 7px;
 }
 
-.status-field__label {
+.statusFieldLabel {
     color: #66706a;
     font-size: 0.8rem;
     font-weight: 700;
 }
 
-.status-badge {
+.statusBadge {
     padding: 5px 9px;
     border-radius: 999px;
     font-size: 0.72rem;
     font-weight: 700;
 }
 
-.status-badge--te-verwerken {
+.statusBadge--te-verwerken {
     color: #795500;
     background: #fff3c4;
 }
 
-.status-badge--in-bereiding {
+.statusBadge--in-bereiding {
     color: #81460b;
     background: #ffe4c2;
 }
 
-.status-badge--klaar {
+.statusBadge--klaar {
     color: #255d38;
     background: #dbf3df;
 }
 
-.status-badge--verzonden {
+.statusBadge--verzonden {
     color: #185d73;
     background: #d9f0f7;
 }
 
-.status-badge--geannuleerd {
+.statusBadge--geannuleerd {
     color: #8a1c15;
     background: #fce0dc;
 }
 
 @media (max-width: 700px) {
     .statistics,
-    .orders-toolbar,
-    .order-card__content,
-    .order-detail--actions {
+    .ordersToolbar,
+    .orderCardContent,
+    .orderDetail--actions {
         grid-template-columns: 1fr;
     }
 
-    .order-card__header {
+    .orderCardHeader {
         flex-direction: column;
     }
 
-    .order-detail--actions {
+    .orderDetail--actions {
         display: grid;
     }
 }
@@ -235,12 +235,12 @@
         repeat(2, minmax(0, 1fr));
     }
 
-    .order-card__content {
+    .orderCardContent {
         grid-template-columns:
         1fr 1fr;
     }
 
-    .order-detail--actions {
+    .orderDetail--actions {
         grid-column: 1 / -1;
         display: grid;
         grid-template-columns:

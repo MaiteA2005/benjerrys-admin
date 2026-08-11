@@ -105,9 +105,9 @@ const renderFlavorList = (
     return flavors
         .map(
         (flavorItem, index) => `
-            <div class="flavor-item">
+            <div class="flavorItem">
             <span
-                class="flavor-item__color"
+                class="flavorItemColor"
                 style="
                 background-color:
                 ${escapeHtml(
@@ -184,8 +184,8 @@ export const renderOrdersPage =
             class="statistics"
         ></section>
 
-        <section class="orders-section">
-            <div class="orders-toolbar">
+        <section class="ordersSection">
+            <div class="ordersToolbar">
             <label class="search-field">
                 <span class="visuallyHidden">
                 Bestellingen zoeken
@@ -193,7 +193,7 @@ export const renderOrdersPage =
 
                 <input
                 id="search-input"
-                class="search-field__input"
+                class="searchFieldInput"
                 type="search"
                 placeholder="Zoek op naam, gemeente of bestelling..."
                 />
@@ -206,7 +206,7 @@ export const renderOrdersPage =
 
                 <select
                 id="status-filter"
-                class="filter-field__select"
+                class="filterFieldSelect"
                 >
                 <option value="alle">
                     Alle statussen
@@ -232,8 +232,8 @@ export const renderOrdersPage =
             ></div>
 
             <div
-            id="orders-container"
-            class="orders-container"
+            id="ordersContainer"
+            class="ordersContainer"
             ></div>
         </section>
 
@@ -284,7 +284,7 @@ export const renderOrdersPage =
 
         const ordersContainer =
         container.querySelector(
-            "#orders-container"
+            "#ordersContainer"
         );
 
         const statisticsContainer =
@@ -347,42 +347,42 @@ export const renderOrdersPage =
             ).length;
 
         statisticsContainer.innerHTML = `
-            <article class="statistic-card">
-            <span class="statistic-card__label">
+            <article class="statisticCard">
+            <span class="statisticCardLabel">
                 Totaal
             </span>
 
-            <strong class="statistic-card__value">
+            <strong class="statisticCardValue">
                 ${orders.length}
             </strong>
             </article>
 
-            <article class="statistic-card">
-            <span class="statistic-card__label">
+            <article class="statisticCard">
+            <span class="statisticCardLabel">
                 Te verwerken
             </span>
 
-            <strong class="statistic-card__value">
+            <strong class="statisticCardValue">
                 ${getCount("te verwerken")}
             </strong>
             </article>
 
-            <article class="statistic-card">
-            <span class="statistic-card__label">
+            <article class="statisticCard">
+            <span class="statisticCardLabel">
                 In bereiding
             </span>
 
-            <strong class="statistic-card__value">
+            <strong class="statisticCardValue">
                 ${getCount("in bereiding")}
             </strong>
             </article>
 
-            <article class="statistic-card">
-            <span class="statistic-card__label">
+            <article class="statisticCard">
+            <span class="statisticCardLabel">
                 Klaar
             </span>
 
-            <strong class="statistic-card__value">
+            <strong class="statisticCardValue">
                 ${getCount("klaar")}
             </strong>
             </article>
@@ -457,18 +457,18 @@ export const renderOrdersPage =
             .map(
                 (order) => `
                 <article
-                    class="order-card"
+                    class="orderCard"
                     data-order-id="${order._id}"
                 >
                     <header
-                    class="order-card__header"
+                    class="orderCardHeader"
                     >
                     <div>
                         <div
-                        class="order-card__heading"
+                        class="orderCardHeading"
                         >
                         <h2
-                            class="order-card__title"
+                            class="orderCardTitle"
                         >
                             Bestelling
                             #${getShortOrderId(
@@ -478,8 +478,8 @@ export const renderOrdersPage =
 
                         <span
                             class="
-                            status-badge
-                            status-badge--${getStatusClass(
+                            statusBadge
+                            statusBadge--${getStatusClass(
                                 order.status
                             )}
                             "
@@ -491,7 +491,7 @@ export const renderOrdersPage =
                         </div>
 
                         <p
-                        class="order-card__date"
+                        class="orderCardDate"
                         >
                         ${formatDate(
                             order.createdAt
@@ -500,7 +500,7 @@ export const renderOrdersPage =
                     </div>
 
                     <strong
-                        class="order-card__price"
+                        class="orderCardPrice"
                     >
                         ${formatPrice(
                         order.totalPrice
@@ -509,19 +509,19 @@ export const renderOrdersPage =
                     </header>
 
                     <div
-                    class="order-card__content"
+                    class="orderCardContent"
                     >
                     <section
-                        class="order-detail"
+                        class="orderDetail"
                     >
                         <h3
-                        class="order-detail__title"
+                        class="orderDetailTitle"
                         >
                         Klant
                         </h3>
 
                         <p
-                        class="order-detail__primary"
+                        class="orderDetailPrimary"
                         >
                         ${escapeHtml(
                             order.customerName
@@ -529,7 +529,7 @@ export const renderOrdersPage =
                         </p>
 
                         <p
-                        class="order-detail__secondary"
+                        class="orderDetailSecondary"
                         >
                         ${escapeHtml(
                             order.address?.street
@@ -551,16 +551,16 @@ export const renderOrdersPage =
                     </section>
 
                     <section
-                        class="order-detail"
+                        class="orderDetail"
                     >
                         <h3
-                        class="order-detail__title"
+                        class="orderDetailTitle"
                         >
                         IJsje
                         </h3>
 
                         <p
-                        class="order-detail__primary"
+                        class="orderDetailPrimary"
                         >
                         Basis:
                         <strong>
@@ -574,7 +574,7 @@ export const renderOrdersPage =
                         </p>
 
                         <div
-                        class="flavor-list"
+                        class="flavorList"
                         >
                         ${renderFlavorList(
                             order.flavors
@@ -582,7 +582,7 @@ export const renderOrdersPage =
                         </div>
 
                         <p
-                        class="order-detail__secondary"
+                        class="orderDetailSecondary"
                         >
                         Toppings:
                         ${escapeHtml(
@@ -595,21 +595,21 @@ export const renderOrdersPage =
 
                     <section
                         class="
-                        order-detail
-                        order-detail--actions
+                        orderDetail
+                        orderDetail--actions
                         "
                     >
                         <label
-                        class="status-field"
+                        class="statusField"
                         >
                         <span
-                            class="status-field__label"
+                            class="statusFieldLabel"
                         >
                             Status
                         </span>
 
                         <select
-                            class="status-field__select"
+                            class="statusFieldSelect"
                             data-status-select
                             data-order-id="${order._id}"
                         >

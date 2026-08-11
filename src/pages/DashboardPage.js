@@ -121,8 +121,8 @@ const renderRecentOrders = (orders) => {
 
                 <span
                     class="
-                    status-badge
-                    status-badge--${String(
+                    statusBadge
+                    statusBadge--${String(
                         order.status || ""
                     )
                         .toLowerCase()
