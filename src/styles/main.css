@@ -11,13 +11,20 @@
 }
 
 :root {
-    font-family:
-        "Chunk",
-        sans-serif;
+    font-family: sans-serif;
     color: #231f20;
-    background: #f4f6f3;
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
+    background: #ffffff;
+}
+
+/* Chunk font */
+.adminTitle,
+.sidebarSubtitle,
+.sidebarBadge,
+.navigationItem,
+.refreshButton,
+.buttonPrimary {
+    font-family: "Chunk";
+    font-weight: 400;
 }
 
 html,
@@ -30,6 +37,7 @@ body,
 
 body {
     min-height: 100vh;
+    background: #ffffff;
 }
 
 body.modalOpen {
@@ -68,11 +76,15 @@ select:disabled {
     color: #66706a;
 }
 
+/* Admin layout */
+
 .adminLayout {
     display: grid;
     grid-template-columns: 260px minmax(0, 1fr);
     min-height: 100vh;
 }
+
+/* Sidebar */
 
 .sidebar {
     position: sticky;
@@ -90,8 +102,7 @@ select:disabled {
     display: grid;
     justify-items: center;
     padding-bottom: 28px;
-    border-bottom: 1px solid
-        rgb(255 255 255 / 20%);
+    border-bottom: 1px solid rgb(255 255 255 / 20%);
 }
 
 .sidebarLogo {
@@ -102,7 +113,6 @@ select:disabled {
 
 .sidebarSubtitle {
     margin: -28px 0 10px;
-    font-weight: 700;
     text-align: center;
 }
 
@@ -112,7 +122,6 @@ select:disabled {
     background: #fdb913;
     border-radius: 999px;
     font-size: 0.75rem;
-    font-weight: 700;
     text-transform: uppercase;
 }
 
@@ -136,15 +145,49 @@ select:disabled {
     text-align: left;
 }
 
-.navigationItem .isActive {
+.navigationItem.isActive {
     color: #231f20;
     background: #fdb913;
-    font-weight: 700;
 }
 
 .navIcon {
     font-size: 1.2rem;
 }
+
+.sidebarFooter {
+    display: grid;
+    gap: 8px;
+    margin-top: auto;
+    padding: 20px 12px 4px;
+    border-top: 1px solid rgb(255 255 255 / 20%);
+}
+
+.sidebarFooterLabel {
+    color: rgb(255 255 255 / 60%);
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.sidebarFooterStatus {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.84rem;
+}
+
+.StatusDot {
+    width: 8px;
+    height: 8px;
+    background: #9cd67a;
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 4px
+        rgb(156 214 122 / 14%);
+}
+
+/* Main content */
 
 .adminMain {
     min-width: 0;
@@ -180,42 +223,10 @@ select:disabled {
 
 .adminDescription {
     margin: 12px 0 0;
-    color: #66706a;
+    color: #231f20;
 }
 
-.sidebarFooter {
-    display: grid;
-    gap: 8px;
-    margin-top: auto;
-    padding: 20px 12px 4px;
-    border-top: 1px solid
-        rgb(255 255 255 / 20%);
-}
-
-.sidebarFooterLabel {
-    color: rgb(255 255 255 / 60%);
-    font-size: 0.74rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-}
-
-.sidebarFooterStatus {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.84rem;
-}
-
-.StatusDot {
-    width: 8px;
-    height: 8px;
-    background: #9cd67a;
-    border-radius: 50%;
-    box-shadow:
-        0 0 0 4px
-        rgb(156 214 122 / 14%);
-}
+/* Buttons */
 
 .refreshButton,
 .button {
@@ -236,6 +247,21 @@ select:disabled {
 .buttonPrimary:hover {
     background: #ffca36;
 }
+
+.deleteButton {
+    min-height: 40px;
+    padding: 0 12px;
+    color: #a32219;
+    background: transparent;
+    border: 1px solid #e5aaa5;
+    border-radius: 8px;
+}
+
+.deleteButton:hover {
+    background: #fef0ed;
+}
+
+/* Feedback */
 
 .feedbackMessage {
     margin-bottom: 18px;
@@ -259,18 +285,7 @@ select:disabled {
     border: 1px solid #f5b7ae;
 }
 
-.deleteButton {
-    min-height: 40px;
-    padding: 0 12px;
-    color: #a32219;
-    background: transparent;
-    border: 1px solid #e5aaa5;
-    border-radius: 8px;
-}
-
-.deleteButton:hover {
-    background: #fef0ed;
-}
+/* States */
 
 .loadingState,
 .emptyState,
@@ -288,8 +303,7 @@ select:disabled {
     border: 4px solid #e2e6e3;
     border-top-color: #799848;
     border-radius: 50%;
-    animation: spin 0.8s linear
-        infinite;
+    animation: spin 0.8s linear infinite;
 }
 
 .emptyStateIcon {
@@ -307,6 +321,8 @@ select:disabled {
     margin: 0 0 20px;
     color: #66706a;
 }
+
+/* Modal */
 
 .modal[hidden] {
     display: none;
@@ -370,6 +386,8 @@ select:disabled {
 .button .danger:hover {
     background: #931d14;
 }
+
+/* Forms */
 
 .modalDialogForm {
     width: min(560px, 100%);
@@ -485,11 +503,15 @@ select:disabled {
     padding-left: 34px;
 }
 
+/* Animations */
+
 @keyframes spin {
     to {
         transform: rotate(360deg);
     }
 }
+
+/* Responsive */
 
 @media (max-width: 520px) {
     .modal {
