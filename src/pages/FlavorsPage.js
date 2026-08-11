@@ -51,7 +51,7 @@ export const renderFlavorsPage = async (container) => {
 
         <section
         id="flavors-container"
-        class="product-grid flavorGrid"
+        class="productGrid flavorGrid"
         ></section>
 
         <div id="flavor-form-modal" class="modal" hidden>
@@ -326,7 +326,7 @@ export const renderFlavorsPage = async (container) => {
     const render = () => {
         if (!flavors.length) {
         list.innerHTML = `
-            <section class="emptyState product-emptyState">
+            <section class="emptyState productEmptyState">
             <h2>Nog geen smaken</h2>
             <p>Voeg je eerste smaak toe.</p>
             </section>
@@ -340,7 +340,7 @@ export const renderFlavorsPage = async (container) => {
             : DEFAULT_COLOR;
 
         return `
-            <article class="product-card flavor-card">
+            <article class="productCard flavor-card">
             <div
                 class="flavorCardVisual"
                 style="--flavor-color:${escapeHtml(color)}"
@@ -351,29 +351,29 @@ export const renderFlavorsPage = async (container) => {
                 </span>
             </div>
 
-            <div class="product-card__body">
-                <div class="product-card__heading">
+            <div class="productCardBody">
+                <div class="productCardHeading">
                 <div>
-                    <p class="product-card__eyebrow">Ice cream flavor</p>
-                    <h2 class="product-card__title">
+                    <p class="productCardSubtitle">Ice cream flavor</p>
+                    <h2 class="productCardTitle">
                     ${escapeHtml(flavor.name)}
                     </h2>
                 </div>
-                <strong class="product-card__price">
+                <strong class="productCardPrice">
                     ${formatPrice(flavor.price)}
                 </strong>
                 </div>
 
-                <div class="product-card__actions">
+                <div class="productCardActions">
                 <button
-                    class="product-action-button product-action-button--edit"
+                    class="productCardActionsButton edit"
                     data-edit-flavor="${flavor._id}"
                     type="button"
                 >
                     Bewerken
                 </button>
                 <button
-                    class="product-action-button product-action-button--delete"
+                    class="productCardActionsButton delete"
                     data-delete-flavor="${flavor._id}"
                     type="button"
                 >

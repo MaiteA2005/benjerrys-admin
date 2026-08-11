@@ -52,7 +52,7 @@ export const renderBasesPage = async (container) => {
         hidden
         ></div>
 
-        <section id="bases-container" class="product-grid"></section>
+        <section id="bases-container" class="productGrid"></section>
 
         <div id="base-form-modal" class="modal" hidden>
         <div class="modalOverlay" data-close-base-form></div>
@@ -286,7 +286,7 @@ export const renderBasesPage = async (container) => {
     const render = () => {
         if (!bases.length) {
         list.innerHTML = `
-            <section class="emptyState product-emptyState">
+            <section class="emptyState productEmptyState">
             <h2>Nog geen bases</h2>
             <p>Voeg je eerste hoorntje of potje toe.</p>
             </section>
@@ -295,50 +295,50 @@ export const renderBasesPage = async (container) => {
         }
 
         list.innerHTML = bases.map((base) => `
-        <article class="product-card base-card">
+        <article class="productCard base-card">
             <div class="base-card__visual">
             <span class="base-card__type">
                 ${escapeHtml(getBaseTypeLabel(base.type))}
             </span>
             </div>
 
-            <div class="product-card__body">
-            <div class="product-card__heading">
+            <div class="productCardBody">
+            <div class="productCardHeading">
                 <div>
-                <p class="product-card__eyebrow">Ice cream base</p>
-                <h2 class="product-card__title">
+                <p class="productCardSubtitle">Ice cream base</p>
+                <h2 class="productCardTitle">
                     ${escapeHtml(base.name)}
                 </h2>
                 </div>
 
-                <strong class="product-card__price">
+                <strong class="productCardPrice">
                 ${formatPrice(base.price)}
                 </strong>
             </div>
 
-            <dl class="product-card__details">
+            <dl class="productCardDetails">
                 <div>
                 <dt>Type</dt>
                 <dd>${escapeHtml(getBaseTypeLabel(base.type))}</dd>
                 </div>
                 <div>
                 <dt>Model</dt>
-                <dd class="product-card__model-url">
+                <dd class="productCardModelUrl">
                     ${escapeHtml(base.modelUrl || "Geen model")}
                 </dd>
                 </div>
             </dl>
 
-            <div class="product-card__actions">
+            <div class="productCardActions">
                 <button
-                class="product-action-button product-action-button--edit"
+                class="productCardActionsButton edit"
                 data-edit-base="${base._id}"
                 type="button"
                 >
                 Bewerken
                 </button>
                 <button
-                class="product-action-button product-action-button--delete"
+                class="productCardActionsButton delete"
                 data-delete-base="${base._id}"
                 type="button"
                 >

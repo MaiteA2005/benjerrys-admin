@@ -51,7 +51,7 @@ export const renderToppingsPage = async (container) => {
 
         <section
         id="toppings-container"
-        class="product-grid topping-grid"
+        class="productGrid topping-grid"
         ></section>
 
         <div id="topping-form-modal" class="modal" hidden>
@@ -332,7 +332,7 @@ export const renderToppingsPage = async (container) => {
     const render = () => {
         if (!toppings.length) {
         list.innerHTML = `
-            <section class="emptyState product-emptyState">
+            <section class="emptyState productEmptyState">
             <h2>Nog geen toppings</h2>
             <p>Voeg je eerste topping toe.</p>
             </section>
@@ -346,7 +346,7 @@ export const renderToppingsPage = async (container) => {
             : DEFAULT_COLOR;
 
         return `
-            <article class="product-card topping-card">
+            <article class="productCard topping-card">
             <div
                 class="topping-card__visual"
                 style="--topping-color:${escapeHtml(color)}"
@@ -360,29 +360,29 @@ export const renderToppingsPage = async (container) => {
                 </span>
             </div>
 
-            <div class="product-card__body">
-                <div class="product-card__heading">
+            <div class="productCardBody">
+                <div class="productCardHeading">
                 <div>
-                    <p class="product-card__eyebrow">Ice cream topping</p>
-                    <h2 class="product-card__title">
+                    <p class="productCardSubtitle">Ice cream topping</p>
+                    <h2 class="productCardTitle">
                     ${escapeHtml(topping.name)}
                     </h2>
                 </div>
-                <strong class="product-card__price">
+                <strong class="productCardPrice">
                     ${formatPrice(topping.price)}
                 </strong>
                 </div>
 
-                <div class="product-card__actions">
+                <div class="productCardActions">
                 <button
-                    class="product-action-button product-action-button--edit"
+                    class="productCardActionsButton edit"
                     data-edit-topping="${topping._id}"
                     type="button"
                 >
                     Bewerken
                 </button>
                 <button
-                    class="product-action-button product-action-button--delete"
+                    class="productCardActionsButton delete"
                     data-delete-topping="${topping._id}"
                     type="button"
                 >
