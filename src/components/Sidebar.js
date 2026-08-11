@@ -105,21 +105,6 @@ export const renderSidebar = (
                     })
                     .join("")}
             </nav>
-
-            <div class="sidebarFooter">
-                <span class="sidebarFooterLabel">
-                    Beheeromgeving
-                </span>
-
-                <span class="sidebarFooterStatus">
-                    <span
-                        class="StatusDot"
-                        aria-hidden="true"
-                    ></span>
-
-                    API verbonden
-                </span>
-            </div>
         </aside>
     `;
 };
