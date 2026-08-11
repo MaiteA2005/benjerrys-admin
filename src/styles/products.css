@@ -7,14 +7,73 @@
 
 .productCard {
     overflow: hidden;
-    background: #ffffff;
-    border: 1px solid #dce4df;
+    background: var(--backgroundColor);
+    border: 1px solid var(--borderColor);
     border-radius: 18px;
     box-shadow:
         0 8px 28px
         rgb(35 31 32 / 6%);
 }
 
+/* Base visual */
+.baseCardVisual {
+    display: flex;
+    min-height: 220px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    background: #f5f1e9;
+}
+
+.baseIllustration {
+    display: flex;
+    width: 110px;
+    height: 110px;
+    align-items: center;
+    justify-content: center;
+}
+
+.baseCardType {
+    padding: 6px 12px;
+    color: var(--textColor);
+    background: var(--backgroundColor);
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/* Cup */
+.cupIllustration {
+    width: 130px;
+    height: 85px;
+    background: var(--brandLightBlue);
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        82% 100%,
+        18% 100%
+    );
+    box-shadow:
+        0 10px 20px
+        rgb(35 31 32 / 12%);
+}
+
+/* Cone */
+.coneIllustration {
+    width: 0;
+    height: 0;
+    border-top: 95px solid #d7a85d;
+    border-right: 42px solid transparent;
+    border-left: 42px solid transparent;
+    filter:
+        drop-shadow(
+            0 8px 8px
+            rgb(35 31 32 / 12%)
+        );
+}
+
+/* Product content */
 .productCardBody {
     padding: 24px;
 }
@@ -28,7 +87,7 @@
 
 .productCardSubtitle {
     margin: 0 0 5px;
-    color: #799848;
+    color: var(--brandLime);
     font-size: 0.72rem;
     font-weight: 800;
     letter-spacing: 0.08em;
@@ -41,9 +100,9 @@
 }
 
 .productCardPrice {
-    white-space: nowrap;
-    color: #1f5436;
+    color: var(--brandDarkGreen);
     font-size: 1.25rem;
+    white-space: nowrap;
 }
 
 .productCardDetails {
@@ -54,12 +113,14 @@
 
 .productCardDetails div {
     display: grid;
-    grid-template-columns: 80px minmax(0, 1fr);
+    grid-template-columns:
+        80px
+            minmax(0, 1fr);
     gap: 14px;
 }
 
 .productCardDetails dt {
-    color: #7c877f;
+    color: var(--mutedText);
     font-size: 0.82rem;
     font-weight: 700;
 }
@@ -76,6 +137,7 @@
     white-space: nowrap;
 }
 
+/* Actions */
 .productCardActions {
     display: grid;
     grid-template-columns:
@@ -93,9 +155,9 @@
 }
 
 .edit {
-    color: #1f5436;
+    color: var(--brandDarkGreen);
     background: #edf4ea;
-    border: 1px solid #bcd2bb;
+    border: 1px solid var(--brandLime);
 }
 
 .edit:hover {
@@ -103,20 +165,21 @@
 }
 
 .delete {
-    color: #a32219;
-    background: #ffffff;
-    border: 1px solid #e5aaa5;
+    color: var(--brandRedHover);
+    background: var(--backgroundColor);
+    border: 1px solid var(--brandRed);
 }
 
 .delete:hover {
     background: #fef0ed;
 }
 
+/* Empty state */
 .productEmptyState {
     grid-column: 1 / -1;
     min-height: 420px;
-    background: #ffffff;
-    border: 2px dashed #cbd7cf;
+    background: var(--backgroundColor);
+    border: 2px dashed var(--mutedText);
     border-radius: 18px;
 }
 
@@ -126,10 +189,17 @@
     height: 64px;
     margin-bottom: 18px;
     place-items: center;
-    color: #1f5436;
+    color: var(--brandDarkGreen);
     background: #edf4ea;
     border-radius: 18px;
     font-size: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 950px) {
+    .productGrid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 520px) {
@@ -145,11 +215,5 @@
     .productCardDetails div {
         grid-template-columns: 1fr;
         gap: 3px;
-    }
-}
-
-@media (max-width: 950px) {
-    .productGrid {
-    grid-template-columns: 1fr;
     }
 }
