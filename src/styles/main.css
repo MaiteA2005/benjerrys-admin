@@ -20,11 +20,14 @@
 .adminTitle,
 .sidebarSubtitle,
 .sidebarBadge,
-.navigationItem,
+.navigationItem {
+    font-family: "Chunk";
+    font-weight: 400;
+}
+
 .refreshButton,
 .buttonPrimary {
     font-family: "Chunk";
-    font-weight: 400;
 }
 
 html,
@@ -121,7 +124,7 @@ select:disabled {
     color: #231f20;
     background: #fdb913;
     border-radius: 999px;
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
 }
 
@@ -151,7 +154,12 @@ select:disabled {
 }
 
 .navIcon {
-    font-size: 1.2rem;
+    padding-right: 10px;
+    display: block;
+    width: 35px;
+    height: 35px;
+    flex: 0 0 35px;
+    object-fit: contain;
 }
 
 .sidebarFooter {
@@ -241,6 +249,7 @@ select:disabled {
     color: #231f20;
     background: #fdb913;
     border: 0;
+    font-weight: 100;
 }
 
 .refreshButton:hover,
