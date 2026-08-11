@@ -1,10 +1,9 @@
-
-.topping-grid {
+.toppingGrid {
     grid-template-columns:
         repeat(3, minmax(0, 1fr));
 }
 
-.topping-card__visual {
+.toppingCardVisual {
     position: relative;
     display: grid;
     min-height: 220px;
@@ -24,14 +23,14 @@
         );
 }
 
-.topping-card__visual::before,
-.topping-card__visual::after {
+.toppingCardVisual::before,
+.toppingCardVisual::after {
     position: absolute;
     border-radius: 50%;
     content: "";
 }
 
-.topping-card__visual::before {
+.toppingCardVisual::before {
     top: -65px;
     right: -45px;
     width: 170px;
@@ -40,7 +39,7 @@
         rgb(255 255 255 / 25%);
 }
 
-.topping-card__visual::after {
+.toppingCardVisual::after {
     bottom: -75px;
     left: -55px;
     width: 190px;
@@ -49,14 +48,14 @@
         rgb(255 255 255 / 22%);
 }
 
-.topping-card__pieces {
+.toppingCardPieces {
     position: relative;
     z-index: 1;
     width: 125px;
     height: 105px;
 }
 
-.topping-card__pieces span {
+.toppingCardPieces span {
     position: absolute;
     display: block;
     width: 28px;
@@ -70,49 +69,49 @@
         rgb(35 31 32 / 14%);
 }
 
-.topping-card__pieces span:nth-child(1) {
+.toppingCardPieces span:nth-child(1) {
     top: 8px;
     left: 47px;
     transform: rotate(18deg);
 }
 
-.topping-card__pieces span:nth-child(2) {
+.toppingCardPieces span:nth-child(2) {
     top: 33px;
     left: 8px;
     transform: rotate(-22deg);
 }
 
-.topping-card__pieces span:nth-child(3) {
+.toppingCardPieces span:nth-child(3) {
     top: 38px;
     right: 5px;
     transform: rotate(28deg);
 }
 
-.topping-card__pieces span:nth-child(4) {
+.toppingCardPieces span:nth-child(4) {
     top: 65px;
     left: 42px;
     transform: rotate(-12deg);
 }
 
-.topping-card__pieces span:nth-child(5) {
+.toppingCardPieces span:nth-child(5) {
     top: 72px;
     right: 16px;
     transform: rotate(35deg);
 }
 
-.topping-card__pieces span:nth-child(6) {
+.toppingCardPieces span:nth-child(6) {
     top: 2px;
     right: 15px;
     transform: rotate(-32deg);
 }
 
-.topping-card__pieces span:nth-child(7) {
+.toppingCardPieces span:nth-child(7) {
     top: 70px;
     left: 4px;
     transform: rotate(21deg);
 }
 
-.topping-card__color-code {
+.toppingCardColorCode {
     position: relative;
     z-index: 1;
     padding: 6px 12px;
@@ -126,7 +125,7 @@
     font-weight: 700;
 }
 
-.topping-form-preview {
+.toppingFormPreview {
     display: flex;
     align-items: center;
     gap: 18px;
@@ -136,14 +135,15 @@
     border-radius: 14px;
 }
 
-.topping-form-preview__visual {
+/* Form Preview Visual */
+.toppingFormPreviewVisual {
     position: relative;
     width: 86px;
     height: 76px;
     flex: 0 0 auto;
 }
 
-.topping-form-preview__visual span {
+.toppingFormPreviewVisual span {
     position: absolute;
     width: 22px;
     height: 14px;
@@ -155,42 +155,42 @@
         rgb(35 31 32 / 12%);
 }
 
-.topping-form-preview__visual
+.toppingFormPreviewVisual
 span:nth-child(1) {
     top: 4px;
     left: 32px;
     transform: rotate(18deg);
 }
 
-.topping-form-preview__visual
+.toppingFormPreviewVisual
 span:nth-child(2) {
     top: 29px;
     left: 4px;
     transform: rotate(-22deg);
 }
 
-.topping-form-preview__visual
+.toppingFormPreviewVisual
 span:nth-child(3) {
     top: 27px;
     right: 2px;
     transform: rotate(28deg);
 }
 
-.topping-form-preview__visual
+.toppingFormPreviewVisual
 span:nth-child(4) {
     bottom: 5px;
     left: 27px;
     transform: rotate(-12deg);
 }
 
-.topping-form-preview__visual
+.toppingFormPreviewVisual
 span:nth-child(5) {
     bottom: 1px;
     right: 8px;
     transform: rotate(35deg);
 }
 
-.topping-form-preview__label {
+.toppingFormPreviewLabel {
     margin: 0 0 4px;
     color: #799848;
     font-size: 0.72rem;
@@ -199,33 +199,33 @@ span:nth-child(5) {
     text-transform: uppercase;
 }
 
-.topping-form-preview__name {
+.toppingFormPreviewName {
     display: block;
     margin-bottom: 5px;
     font-size: 1.1rem;
 }
 
-.topping-form-preview__color {
+.toppingFormPreviewColor {
     color: #717b75;
     font-family: inherit;
     font-size: 0.82rem;
 }
 
 @media (max-width: 520px) {
-    .topping-form-preview {
+    .toppingFormPreview {
         align-items: flex-start;
         flex-direction: column;
     }
 }
 
 @media (max-width: 700px) {
-    .topping-grid {
+    .toppingGrid {
         grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 1200px) {
-    .topping-grid {
+    .toppingGrid {
         grid-template-columns:
         repeat(2, minmax(0, 1fr));
     }

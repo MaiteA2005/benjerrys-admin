@@ -51,7 +51,7 @@ export const renderToppingsPage = async (container) => {
 
         <section
         id="toppings-container"
-        class="productGrid topping-grid"
+        class="productGrid toppingGrid"
         ></section>
 
         <div id="topping-form-modal" class="modal" hidden>
@@ -85,26 +85,26 @@ export const renderToppingsPage = async (container) => {
             </header>
 
             <form id="topping-form" class="adminForm" novalidate>
-            <section class="topping-form-preview">
+            <section class="toppingFormPreview">
                 <div
                 id="topping-preview-visual"
-                class="topping-form-preview__visual"
+                class="toppingFormPreviewVisual"
                 >
                 <span></span><span></span><span></span>
                 <span></span><span></span>
                 </div>
 
                 <div>
-                <p class="topping-form-preview__label">Voorbeeld</p>
+                <p class="toppingFormPreviewLabel">Voorbeeld</p>
                 <strong
                     id="topping-preview-name"
-                    class="topping-form-preview__name"
+                    class="toppingFormPreviewName"
                 >
                     Nieuwe topping
                 </strong>
                 <span
                     id="topping-preview-color"
-                    class="topping-form-preview__color"
+                    class="toppingFormPreviewColor"
                 ></span>
                 </div>
             </section>
@@ -348,14 +348,14 @@ export const renderToppingsPage = async (container) => {
         return `
             <article class="productCard topping-card">
             <div
-                class="topping-card__visual"
+                class="toppingCardVisual"
                 style="--topping-color:${escapeHtml(color)}"
             >
-                <div class="topping-card__pieces">
+                <div class="toppingCardPieces">
                 <span></span><span></span><span></span>
                 <span></span><span></span>
                 </div>
-                <span class="topping-card__color-code">
+                <span class="toppingCardColorCode">
                 ${escapeHtml(color.toUpperCase())}
                 </span>
             </div>
