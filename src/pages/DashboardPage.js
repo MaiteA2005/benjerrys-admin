@@ -112,9 +112,9 @@ const renderRecentOrders = (orders) => {
     return recentOrders
         .map(
         (order) => `
-            <article class="recent-order">
+            <article class="recentOrder">
             <div>
-                <div class="recent-order__heading">
+                <div class="recentOrderHeading">
                 <strong>
                     #${getShortOrderId(order)}
                 </strong>
@@ -135,19 +135,19 @@ const renderRecentOrders = (orders) => {
                 </span>
                 </div>
 
-                <p class="recent-order__customer">
+                <p class="recentOrderCustomer">
                 ${escapeHtml(
                     order.customerName ||
                     "Onbekende klant"
                 )}
                 </p>
 
-                <p class="recent-order__meta">
+                <p class="recentOrderMeta">
                 ${formatDate(order.createdAt)}
                 </p>
             </div>
 
-            <strong class="recent-order__price">
+            <strong class="recentOrderPrice">
                 ${formatPrice(
                 order.totalPrice
                 )}
@@ -187,8 +187,8 @@ export const renderDashboardPage =
         </header>
 
         <div
-            id="dashboard-content"
-            class="dashboard-content"
+            id="dashboardContent"
+            class="dashboardContent"
         >
             <div class="loadingState">
             <div class="loadingSpinner"></div>
@@ -202,7 +202,7 @@ export const renderDashboardPage =
 
         const dashboardContent =
         container.querySelector(
-            "#dashboard-content"
+            "#dashboardContent"
         );
 
         const refreshButton =
@@ -235,62 +235,62 @@ export const renderDashboardPage =
             calculateRevenue(orders);
 
             dashboardContent.innerHTML = `
-            <section class="dashboard-statistics">
+            <section class="dashboardStatistics">
                 <article
                 class="
-                    dashboard-stat-card
-                    dashboard-stat-card--featured
+                    dashboardStatCard
+                    dashboardStatCardFeatured
                 "
                 >
                 <span
-                    class="dashboard-stat-card__label"
+                    class="dashboardStatCardLabel"
                 >
                     Bestellingen vandaag
                 </span>
 
                 <strong
-                    class="dashboard-stat-card__value"
+                    class="dashboardStatCardValue"
                 >
                     ${todayOrders.length}
                 </strong>
 
                 <span
-                    class="dashboard-stat-card__detail"
+                    class="dashboardStatCardDetail"
                 >
                     ${orders.length}
                     in totaal
                 </span>
                 </article>
 
-                <article class="dashboard-stat-card">
+                <article class="dashboardStatCard">
                 <span
-                    class="dashboard-stat-card__label"
+                    class="dashboardStatCardLabel"
                 >
                     Totale omzet
                 </span>
 
                 <strong
-                    class="dashboard-stat-card__value"
+                    class="dashboardStatCardValue"
                 >
                     ${formatPrice(totalRevenue)}
                 </strong>
 
                 <span
-                    class="dashboard-stat-card__detail"
+                    class="dashboardStatCardDetail"
                 >
                     Zonder geannuleerde bestellingen
                 </span>
                 </article>
 
-                <article class="dashboard-stat-card">
+                <article class="dashboardStatCard">
                 <span
-                    class="dashboard-stat-card__label"
+                    class="dashboardStatCardLabel"
                 >
                     Te verwerken
                 </span>
 
                 <strong
-                    class="dashboard-stat-card__value"
+                    class="dashboardStatCardValue"
                 >
                     ${getStatusCount(
                     orders,
@@ -299,21 +299,21 @@ export const renderDashboardPage =
                 </strong>
 
                 <span
-                    class="dashboard-stat-card__detail"
+                    class="dashboardStatCardDetail"
                 >
                     Wachten op verwerking
                 </span>
                 </article>
 
-                <article class="dashboard-stat-card">
+                <article class="dashboardStatCard">
                 <span
-                    class="dashboard-stat-card__label"
+                    class="dashboardStatCardLabel"
                 >
                     In bereiding
                 </span>
 
                 <strong
-                    class="dashboard-stat-card__value"
+                    class="dashboardStatCardValue"
                 >
                     ${getStatusCount(
                     orders,
@@ -322,21 +322,21 @@ export const renderDashboardPage =
                 </strong>
 
                 <span
-                    class="dashboard-stat-card__detail"
+                    class="dashboardStatCardDetail"
                 >
                     Worden momenteel gemaakt
                 </span>
                 </article>
 
-                <article class="dashboard-stat-card">
+                <article class="dashboardStatCard">
                 <span
-                    class="dashboard-stat-card__label"
+                    class="dashboardStatCardLabel"
                 >
                     Klaar
                 </span>
 
                 <strong
-                    class="dashboard-stat-card__value"
+                    class="dashboardStatCardValue"
                 >
                     ${getStatusCount(
                     orders,
@@ -345,21 +345,21 @@ export const renderDashboardPage =
                 </strong>
 
                 <span
-                    class="dashboard-stat-card__detail"
+                    class="dashboardStatCardDetail"
                 >
                     Klaar voor verzending
                 </span>
                 </article>
             </section>
 
-            <section class="dashboard-grid">
-                <article class="dashboard-panel">
+            <section class="dashboardGrid">
+                <article class="dashboardPanel">
                 <header
-                    class="dashboard-panel__header"
+                    class="dashboardPanelHeader"
                 >
                     <div>
                     <p
-                        class="dashboard-panel__eyebrow"
+                        class="dashboardPanelSubtitle"
                     >
                         Activiteit
                     </p>
@@ -370,7 +370,7 @@ export const renderDashboardPage =
                     </div>
 
                     <button
-                    class="text-button"
+                    class="textButton"
                     type="button"
                     data-go-to-orders
                     >
@@ -378,7 +378,7 @@ export const renderDashboardPage =
                     </button>
                 </header>
 
-                <div class="recent-orders">
+                <div class="recentOrders">
                     ${renderRecentOrders(
                     orders
                     )}
@@ -387,12 +387,12 @@ export const renderDashboardPage =
 
                 <aside
                 class="
-                    dashboard-panel
-                    dashboard-panel--summary
+                    dashboardPanel
+                    dashboardPanel--summary
                 "
                 >
                 <p
-                    class="dashboard-panel__eyebrow"
+                    class="dashboardPanelSubtitle"
                 >
                     Statusoverzicht
                 </p>
@@ -401,12 +401,12 @@ export const renderDashboardPage =
                     Bestelworkflow
                 </h2>
 
-                <div class="workflow-list">
-                    <div class="workflow-item">
+                <div class="workflowList">
+                    <div class="workflowItem">
                     <span
                         class="
-                        workflow-item__indicator
-                        workflow-item__indicator--processing
+                        workflowItemIndicator
+                        processing
                         "
                     ></span>
 
@@ -422,11 +422,11 @@ export const renderDashboardPage =
                     </strong>
                     </div>
 
-                    <div class="workflow-item">
+                    <div class="workflowItem">
                     <span
                         class="
-                        workflow-item__indicator
-                        workflow-item__indicator--preparing
+                        workflowItemIndicator
+                        preparing
                         "
                     ></span>
 
@@ -442,11 +442,11 @@ export const renderDashboardPage =
                     </strong>
                     </div>
 
-                    <div class="workflow-item">
+                    <div class="workflowItem">
                     <span
                         class="
-                        workflow-item__indicator
-                        workflow-item__indicator--ready
+                        workflowItemIndicator
+                        ready
                         "
                     ></span>
 
@@ -462,11 +462,11 @@ export const renderDashboardPage =
                     </strong>
                     </div>
 
-                    <div class="workflow-item">
+                    <div class="workflowItem">
                     <span
                         class="
-                        workflow-item__indicator
-                        workflow-item__indicator--sent
+                        workflowItemIndicator
+                        sent
                         "
                     ></span>
 
