@@ -45,7 +45,10 @@ export const renderBasesPage = async (container) => {
 
             <button
                 id="add-base-button"
-                class="refreshButton"
+                class="
+                refreshButton
+                hidden
+                "
                 type="button"
             >
                 + Nieuwe base
