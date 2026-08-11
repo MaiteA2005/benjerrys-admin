@@ -1,10 +1,9 @@
-
-.flavor-grid {
+.flavorGrid {
     grid-template-columns:
         repeat(3, minmax(0, 1fr));
 }
 
-.flavor-card__visual {
+.flavorCardVisual {
     position: relative;
     display: grid;
     min-height: 220px;
@@ -24,14 +23,14 @@
         );
 }
 
-.flavor-card__visual::before,
-.flavor-card__visual::after {
+.flavorCardVisual::before,
+.flavorCardVisual::after {
     position: absolute;
     border-radius: 50%;
     content: "";
 }
 
-.flavor-card__visual::before {
+.flavorCardVisual::before {
     top: -55px;
     right: -45px;
     width: 150px;
@@ -40,7 +39,7 @@
         rgb(255 255 255 / 35%);
 }
 
-.flavor-card__visual::after {
+.flavorCardVisual::after {
     bottom: -75px;
     left: -50px;
     width: 190px;
@@ -49,7 +48,7 @@
         rgb(255 255 255 / 30%);
 }
 
-.flavor-card__scoop {
+.flavorCardScoop {
     position: relative;
     z-index: 1;
     width: 112px;
@@ -71,29 +70,29 @@
     transform: rotate(-7deg);
 }
 
-.flavor-card__scoop::before,
-.flavor-card__scoop::after {
+.flavorCardScoop::before,
+.flavorCardScoop::after {
     position: absolute;
     background: inherit;
     border-radius: 50%;
     content: "";
 }
 
-.flavor-card__scoop::before {
+.flavorCardScoop::before {
     top: 12px;
     right: -5px;
     width: 38px;
     height: 38px;
 }
 
-.flavor-card__scoop::after {
+.flavorCardScoop::after {
     bottom: 5px;
     left: 4px;
     width: 35px;
     height: 35px;
 }
 
-.flavor-card__color-code {
+.flavorCardColorCode {
     position: relative;
     z-index: 1;
     padding: 6px 12px;
@@ -107,22 +106,7 @@
     font-weight: 700;
 }
 
-.flavor-color-detail {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.flavor-color-detail__swatch {
-    width: 20px;
-    height: 20px;
-    flex: 0 0 auto;
-    border: 1px solid
-        rgb(0 0 0 / 12%);
-    border-radius: 50%;
-}
-
-.flavor-form-preview {
+.flavorFormPreview {
     display: flex;
     align-items: center;
     gap: 18px;
@@ -132,7 +116,7 @@
     border-radius: 14px;
 }
 
-.flavor-form-preview__scoop {
+.flavorFormPreviewScoop {
     width: 76px;
     height: 76px;
     flex: 0 0 auto;
@@ -153,7 +137,7 @@
     transform: rotate(-6deg);
 }
 
-.flavor-form-preview__label {
+.flavorFormPreviewLabel {
     margin: 0 0 4px;
     color: #799848;
     font-size: 0.72rem;
@@ -162,19 +146,19 @@
     text-transform: uppercase;
 }
 
-.flavor-form-preview__name {
+.flavorFormPreviewName {
     display: block;
     margin-bottom: 5px;
     font-size: 1.1rem;
 }
 
-.flavor-form-preview__color {
+.flavorFormPreviewColor {
     color: #717b75;
     font-family: inherit;
     font-size: 0.82rem;
 }
 
-.admin-color-picker {
+.adminColorPicker {
     display: flex;
     min-height: 48px;
     align-items: center;
@@ -185,27 +169,27 @@
     border-radius: 9px;
 }
 
-.admin-color-picker:focus-within {
+.adminColorPicker:focus-within {
     border-color: #799848;
     box-shadow:
         0 0 0 3px
         rgb(121 152 72 / 15%);
 }
 
-.admin-color-picker--error {
+.adminColorPicker--error {
     border-color: #b42318;
 }
 
-.admin-color-picker--error:focus-within {
+.adminColorPicker--error:focus-within {
     border-color: #b42318;
     box-shadow:
         0 0 0 3px
         rgb(180 35 24 / 12%);
 }
 
-.admin-color-picker__input {
-    width: 38px;
-    height: 34px;
+.adminColorPickerInput {
+    width: 35px;
+    height: 35px;
     padding: 0;
     overflow: hidden;
     background: transparent;
@@ -214,41 +198,41 @@
     cursor: pointer;
 }
 
-.admin-color-picker__input::-webkit-color-swatch-wrapper {
+.adminColorPickerInput::-webkit-color-swatch-wrapper {
     padding: 0;
 }
 
-.admin-color-picker__input::-webkit-color-swatch {
+.adminColorPickerInput::-webkit-color-swatch {
     border: 0;
     border-radius: 50%;
 }
 
-.admin-color-picker__input::-moz-color-swatch {
+.adminColorPickerInput::-moz-color-swatch {
     border: 0;
     border-radius: 50%;
 }
 
-.admin-color-picker__value {
+.adminColorPickerValue {
     color: #66706a;
     font-family: inherit;
     font-size: 0.9rem;
 }
 
 @media (max-width: 520px) {
-    .flavor-form-preview {
+    .flavorFormPreview {
         align-items: flex-start;
         flex-direction: column;
     }
 }
 
 @media (max-width: 700px) {
-    .flavor-grid {
+    .flavorGrid {
         grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 1200px) {
-    .flavor-grid {
+    .flavorGrid {
         grid-template-columns:
         repeat(2, minmax(0, 1fr));
     }

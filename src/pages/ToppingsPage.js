@@ -126,16 +126,16 @@ export const renderToppingsPage = async (container) => {
 
             <label class="formField">
                 <span class="fieldLabel">Kleur</span>
-                <div class="admin-color-picker">
+                <div class="adminColorPicker">
                 <input
                     id="topping-color"
-                    class="admin-color-picker__input"
+                    class="adminColorPickerInput"
                     type="color"
                     value="${DEFAULT_COLOR}"
                 />
                 <span
                     id="topping-color-value"
-                    class="admin-color-picker__value"
+                    class="adminColorPickerValue"
                 ></span>
                 </div>
                 <span

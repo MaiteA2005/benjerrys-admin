@@ -51,7 +51,7 @@ export const renderFlavorsPage = async (container) => {
 
         <section
         id="flavors-container"
-        class="product-grid flavor-grid"
+        class="product-grid flavorGrid"
         ></section>
 
         <div id="flavor-form-modal" class="modal" hidden>
@@ -85,23 +85,23 @@ export const renderFlavorsPage = async (container) => {
             </header>
 
             <form id="flavor-form" class="adminForm" novalidate>
-            <section class="flavor-form-preview">
+            <section class="flavorFormPreview">
                 <div
                 id="flavor-preview-scoop"
-                class="flavor-form-preview__scoop"
+                class="flavorFormPreviewScoop"
                 ></div>
 
                 <div>
-                <p class="flavor-form-preview__label">Voorbeeld</p>
+                <p class="flavorFormPreviewLabel">Voorbeeld</p>
                 <strong
                     id="flavor-preview-name"
-                    class="flavor-form-preview__name"
+                    class="flavorFormPreviewName"
                 >
                     Nieuwe smaak
                 </strong>
                 <span
                     id="flavor-preview-color"
-                    class="flavor-form-preview__color"
+                    class="flavorFormPreviewColor"
                 ></span>
                 </div>
             </section>
@@ -123,16 +123,16 @@ export const renderFlavorsPage = async (container) => {
 
             <label class="formField">
                 <span class="fieldLabel">Kleur</span>
-                <div class="admin-color-picker">
+                <div class="adminColorPicker">
                 <input
                     id="flavor-color"
-                    class="admin-color-picker__input"
+                    class="adminColorPickerInput"
                     type="color"
                     value="${DEFAULT_COLOR}"
                 />
                 <span
                     id="flavor-color-value"
-                    class="admin-color-picker__value"
+                    class="adminColorPickerValue"
                 ></span>
                 </div>
                 <span
@@ -342,11 +342,11 @@ export const renderFlavorsPage = async (container) => {
         return `
             <article class="product-card flavor-card">
             <div
-                class="flavor-card__visual"
+                class="flavorCardVisual"
                 style="--flavor-color:${escapeHtml(color)}"
             >
-                <div class="flavor-card__scoop"></div>
-                <span class="flavor-card__color-code">
+                <div class="flavorCardScoop"></div>
+                <span class="flavorCardColorCode">
                 ${escapeHtml(color.toUpperCase())}
                 </span>
             </div>
