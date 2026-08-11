@@ -8,8 +8,8 @@
 
 .statisticCard {
     padding: 20px;
-    background: #ffffff;
-    border: 1px solid #dde4df;
+    background: var(--backgroundColor);
+    border: 1px solid var(--borderColor);
     border-radius: 14px;
     box-shadow:
         0 5px 18px
@@ -19,7 +19,7 @@
 .statisticCardLabel {
     display: block;
     margin-bottom: 10px;
-    color: #66706a;
+    color: var(--mutedText);
 }
 
 .statisticCardValue {
@@ -28,8 +28,8 @@
 
 .ordersSection {
     padding: 22px;
-    background: #ffffff;
-    border: 1px solid #dde4df;
+    background: var(--backgroundColor);
+    border: 1px solid var(--borderColor);
     border-radius: 16px;
     box-shadow:
         0 8px 28px
@@ -51,9 +51,9 @@
     width: 100%;
     min-height: 44px;
     padding: 0 13px;
-    color: #231f20;
-    background: #ffffff;
-    border: 1px solid #d7dfda;
+    color: var(--textColor);
+    background: var(--backgroundColor);
+    border: 1px solid var(--borderColor);
     border-radius: 9px;
     outline: none;
 }
@@ -61,7 +61,7 @@
 .searchFieldInput:focus,
 .filterFieldSelect:focus,
 .statusFieldSelect:focus {
-    border-color: #799848;
+    border-color: var(--brandLime);
     box-shadow: 0 0 0 3px
         rgb(121 152 72 / 15%);
 }
@@ -73,7 +73,7 @@
 
 .orderCard {
     overflow: hidden;
-    border: 1px solid #dce3df;
+    border: 1px solid var(--borderColor);
     border-radius: 14px;
 }
 
@@ -84,7 +84,7 @@
     gap: 20px;
     padding: 18px 20px;
     background: #f7f9f7;
-    border-bottom: 1px solid #dce3df;
+    border-bottom: 1px solid var(--borderColor);
 }
 
 .orderCardHeading {
@@ -101,7 +101,7 @@
 
 .orderCardDate {
     margin: 6px 0 0;
-    color: #738078;
+    color: var(--mutedText);
     font-size: 0.85rem;
 }
 
@@ -126,7 +126,7 @@
 
 .orderDetailTitle {
     margin: 0 0 10px;
-    color: #738078;
+    color: var(--mutedText);
     font-size: 0.78rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -138,7 +138,7 @@
 
 .orderDetailSecondary {
     margin: 0;
-    color: #66706a;
+    color: var(--mutedText);
     line-height: 1.55;
 }
 
@@ -175,7 +175,7 @@
 }
 
 .statusFieldLabel {
-    color: #66706a;
+    color: var(--mutedText);
     font-size: 0.8rem;
     font-weight: 700;
 }
