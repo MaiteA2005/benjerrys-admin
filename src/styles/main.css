@@ -12,18 +12,18 @@
 
 :root {
     font-family: Arial, Helvetica, sans-serif;
-    color: #231f20;
-    background: #ffffff;
+    --textColor: #231f20;
+    --mutedText: #66706a;
+    --borderColor: #dde4df;
+    --backgroundColor: #ffffff;
 
     --brandGreen: #41873f;
     --brandYellow: #fdb913;
     --brandLime: #82bc00;
     --brandLightBlue: #c4e7f3;
     --brandBlue: #40b4e5;
-
-    --textColor: #231f20;
-    --mutedText: #66706a;
-    --borderColor: #dde4df;
+    --brandOrange: #f26e26;
+    --brandRed: #e2231a;
 }
 
 html,
@@ -119,7 +119,7 @@ select:disabled {
     display: grid;
     justify-items: center;
     padding-bottom: 16px;
-    border-bottom: 2px solid #231f20;
+    border-bottom: 2px solid var(--brandYellow);
 }
 
 .sidebarLogo {
